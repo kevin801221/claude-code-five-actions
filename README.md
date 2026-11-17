@@ -4,7 +4,7 @@
 
 五個動作 × 圖解指南 × 可用範本 × 可重現的失敗案例。
 
-[English](README.en.md) · [五分鐘開始](docs/quickstart.md) · [完整圖文講義](docs/guide.zh-TW.md) · [驗證範圍](docs/verification.md)
+[English](README.en.md) · [五分鐘開始](docs/quickstart.md) · [完整圖文講義](docs/guide.zh-TW.md) · [產物驗收補充篇](docs/field-notes.zh-TW.md) · [驗證範圍](docs/verification.md)
 
 [![Checks](https://github.com/kevin801221/claude-code-five-actions/actions/workflows/check.yml/badge.svg)](https://github.com/kevin801221/claude-code-five-actions/actions/workflows/check.yml)
 [![Maintenance](https://github.com/kevin801221/claude-code-five-actions/actions/workflows/maintenance.yml/badge.svg)](https://github.com/kevin801221/claude-code-five-actions/actions/workflows/maintenance.yml)
@@ -26,6 +26,17 @@ Agent 說測試都過了，你一跑卻壞掉。修好眼前的 bug，正常功�
 | 3. 獨立審查 | 對照原始規格找到的正確性缺口 | [Reviewer prompt](templates/REVIEW.md) |
 | 4. 確定性邊界 | 工具、環境與交付動作的限制 | [邊界與 Stop hook 範例](templates/boundaries/README.md) |
 | 5. 教訓進結構 | 能攔下過去錯誤的新檢查 | [教訓轉檢查範本](templates/LESSONS.md) |
+
+## 不只測程式，也驗收最後交付的東西
+
+摘要有四個標題，不代表沒有漏決議；SVG 能輸出，不代表放進信件後仍然可讀。新補充篇把「數字量測、截圖審查、實際操作」接回五個動作，並要求重要檢查能抓到一個已知錯誤。
+
+- [驗證產物，也驗證你的檢查](docs/field-notes.zh-TW.md)：六個可採用的觀點、團隊導入門檻與來源限制。
+- [產物驗收表](templates/ARTIFACT-CHECKS.md)：把規格、產物、錯誤樣本與證據放在同一張表。
+- [會議記錄幫手](docs/cases/meeting-notes.md)：STT → 摘要 → Mermaid → 測試信件的五步設計。
+- [四個半導體情境](docs/cases/semiconductor.md)：regression 分類、Tcl 遷移、良率週報、IP 文件問答。
+
+後兩項是教學設計，尚未實作應用；可立即執行的案例在下方。
 
 ## 一個案例，三種結果
 

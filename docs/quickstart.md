@@ -18,6 +18,8 @@ node examples/scroll-drift/verify.mjs
 
 三個版本的結果必須分別是 3/4、1/4、4/4 通過。前兩個版本的失敗是案例的必要證據；驗證器會檢查它們是否敗在正確的驗收條件。
 
+若交付的是摘要、圖表或信件，用[產物驗收表](../templates/ARTIFACT-CHECKS.md)補上實際產物與故意做錯的樣本。Build 成功、檔案存在或標題齊全，都不能單獨代表內容正確；方法見[補充篇](field-notes.zh-TW.md)。
+
 ## 3. 用新 reviewer 對照規格
 
 把原始 SPEC、diff 與證據交給未參與實作的 reviewer。使用 [Reviewer prompt](../templates/REVIEW.md)，要求先報影響正確性的缺口。

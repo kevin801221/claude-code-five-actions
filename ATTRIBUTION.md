@@ -6,6 +6,12 @@
 
 此版本新增 README 導覽、範本、刻意建立的捲動教學案例與維護程式；新增內容不代表流派作者背書。
 
+## 使用者提供的增補稿
+
+2026-11-17，使用者貼上同名課程的增補全文，原署名 **@Luo Zih-Jia**；[Claude Artifact 分享連結](https://claude.ai/artifact/WqUjxX1zCcjWqSp79bGgyh#6832ad0f-0456)當時要求登入，因此取材依據是使用者實際提供的文字。
+
+[產物驗收補充篇](docs/field-notes.zh-TW.md)、[會議記錄案例](docs/cases/meeting-notes.md)、[半導體情境](docs/cases/semiconductor.md)與[驗收表](templates/ARTIFACT-CHECKS.md)為篩選、改寫及補充限制後的教材，沒有覆寫原稿，也沒有把草稿的示意腳本改稱可執行實作。技術主張另附官方來源；案例不是實際客戶交付或成效數據。
+
 ## 上游參考
 
 - [Claude Code 官方文件](https://code.claude.com/docs/en/best-practices)
