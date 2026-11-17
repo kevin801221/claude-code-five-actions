@@ -18,7 +18,7 @@ Move the complete original README to docs/guide.zh-TW.md, adjusting only image p
 
 ## Task 3 — Encode checks and boundaries
 
-Write subprocess tests for the Stop wrapper first: success returns 0; failure, missing command, and timeout return 2 with useful stderr and no control JSON on stdout. Implement scripts/stop_hook.py, an optional settings.example.json, and scripts/check_repo.py for Markdown destinations, JSON syntax, original-course integrity, and the complete acceptance demo. Run python3 -m unittest discover -s tests -v and python3 scripts/check_repo.py.
+Write subprocess tests for the Stop wrapper first: success returns 0; failure, missing command, and timeout return 2 with useful stderr and a structured block decision on stdout only when blocking. Implement scripts/stop_hook.py, an optional settings.example.json, and scripts/check_repo.py for Markdown destinations, JSON syntax, original-course integrity, and the complete acceptance demo. Run python3 -m unittest discover -s tests -v and python3 scripts/check_repo.py.
 
 ## Task 4 — Make maintenance executable
 

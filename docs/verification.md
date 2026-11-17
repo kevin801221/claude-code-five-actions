@@ -13,6 +13,7 @@
 | 專案 settings 的放置位置 | 官方來源複查 | 2026-11-17 閱讀 [Settings](https://code.claude.com/docs/en/settings)；範本需要手動整合，不自動覆寫 |
 | 上游內容是否改變 | 自動觀察 | [來源清單](../maintenance/sources.json)與[指紋基準](../maintenance/upstream-baseline.json)；指紋相同不代表已完整實測 |
 | 原稿中的模型名稱、二手演講數字與所有 CLI 範例 | 待逐項複查 | 保留原始署名與內容，不能以本 repo 的 CI 徽章替它們背書 |
-| 瀏覽器 UI 與真實 Claude session | 不在自動化 suite 內 | 瀏覽器頁面供手動體驗；新版本整合測試可依[路線圖](../ROADMAP.md)補充 |
+| 瀏覽器 UI | 單次手動 smoke check | [觀察紀錄](../examples/scroll-drift/manual-browser-smoke.json)：fixed 能捲動、overfixed 滾輪不動、buggy 閒置會漂移；不是持續執行的瀏覽器整合 suite |
+| 真實 Claude session | 尚未整合驗證 | 未宣稱在每個 Claude Code 版本測過 hook；見[路線圖](../ROADMAP.md) |
 
 新增「已驗證」項目時，需附環境、指令、輸出和來源；若只比對文件，使用「來源複查」狀態。

@@ -21,8 +21,11 @@ for (const [variant, expectedFailures] of Object.entries(expectations)) {
   const output = result.stdout ?? '';
   const failures = [...output.matchAll(/^not ok \d+ - (.+)$/gm)].map(match => match[1]);
   const count = Number(output.match(/^# tests (\d+)$/m)?.[1]);
+  const summary = field => Number(output.match(new RegExp(`^# ${field} (\\d+)$`, 'm'))?.[1]);
   const expectedExit = expectedFailures.length ? 1 : 0;
   if (result.error || result.status !== expectedExit || count !== 4 ||
+      summary('pass') !== 4 - expectedFailures.length || summary('fail') !== expectedFailures.length ||
+      summary('skipped') !== 0 || summary('cancelled') !== 0 || summary('todo') !== 0 ||
       JSON.stringify(failures) !== JSON.stringify(expectedFailures)) {
     console.error(output, result.stderr ?? '', result.error ?? '');
     throw new Error(`Unexpected acceptance result for ${variant}`);

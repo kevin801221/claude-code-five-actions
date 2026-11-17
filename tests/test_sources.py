@@ -1,4 +1,7 @@
 import hashlib
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import http.client
+import threading
 import unittest
 from scripts.watch_sources import compare_sources
 
@@ -30,3 +33,32 @@ class SourceTests(unittest.TestCase):
         baseline = {'official': {'sha256': digest(b'one')}}
         rows = compare_sources([SOURCE], baseline, lambda source: b'one')
         self.assertEqual(rows[0]['status'], 'unchanged')
+
+    def test_truncated_http_response_is_reported_without_losing_baseline(self):
+        class TruncatedHandler(BaseHTTPRequestHandler):
+            protocol_version = 'HTTP/1.1'
+            def do_GET(self):
+                self.send_response(200)
+                self.send_header('Transfer-Encoding', 'chunked')
+                self.end_headers()
+                self.wfile.write(b'64\r\npartial')
+                self.wfile.flush()
+                self.close_connection = True
+            def log_message(self, *args):
+                pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), TruncatedHandler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        baseline = {'official': {'sha256': digest(b'one')}}
+        source = dict(SOURCE, watch_url=f'http://127.0.0.1:{server.server_port}/docs')
+        try:
+            try:
+                rows = compare_sources([source], baseline)
+            except http.client.HTTPException as error:
+                self.fail(f'Retrieval failure escaped the monitor: {type(error).__name__}')
+            self.assertEqual(rows[0]['status'], 'unreachable')
+            self.assertEqual(baseline['official']['sha256'], digest(b'one'))
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)

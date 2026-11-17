@@ -3,6 +3,7 @@
 import argparse
 from datetime import datetime, timezone
 import hashlib
+import http.client
 import json
 from pathlib import Path
 import urllib.request
@@ -32,7 +33,7 @@ def compare_sources(sources, baseline, fetcher=fetch_source):
         try:
             current = hashlib.sha256(fetcher(source)).hexdigest()
             row.update(sha256=current, status='new' if previous is None else 'unchanged' if current == previous else 'changed')
-        except (OSError, ValueError, KeyError, IndexError, TypeError) as error:
+        except (OSError, http.client.HTTPException, ValueError, KeyError, IndexError, TypeError) as error:
             row.update(status='unreachable', error=f'{type(error).__name__}: {error}')
         rows.append(row)
     return rows

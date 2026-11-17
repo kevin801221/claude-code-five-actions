@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-11-17T10:08:49.558Z",
+  "observed_at": "2026-11-17T10:22:50.954Z",
   "runtime": "v22.13.0",
   "command": "node examples/scroll-drift/verify.mjs --record",
   "scope": "JavaScript policy acceptance tests; not a Claude session or an automated browser test",
