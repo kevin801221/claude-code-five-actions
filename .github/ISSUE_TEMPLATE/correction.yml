@@ -1,0 +1,25 @@
+name: 內容更正
+description: 提供來源與需要修正的段落
+title: "[Correction] "
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: 原文位置
+      placeholder: 檔案、段落或連結
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: 一手來源
+      placeholder: 官方文件、固定 commit 或可重現證據
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: 建議更正
+      placeholder: 說明原本與建議內容的差異
+    validations:
+      required: true

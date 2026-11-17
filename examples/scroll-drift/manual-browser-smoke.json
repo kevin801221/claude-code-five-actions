@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-17T10:20:27.575929+00:00",
+  "browser": "ChatGPT in-app browser; exact engine version not recorded",
+  "scope": "One manual UI smoke check, not a scheduled browser integration suite or a timing benchmark",
+  "observations": [
+    {
+      "variant": "fixed",
+      "action": "Wheel down inside content",
+      "before": 120,
+      "after": 404
+    },
+    {
+      "variant": "overfixed",
+      "action": "Wheel down inside content",
+      "before": 120,
+      "after": 120
+    },
+    {
+      "variant": "buggy",
+      "action": "Leave content idle",
+      "before": 120,
+      "after": 149
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-11-17T10:22:50.954Z",
+  "runtime": "v22.13.0",
+  "command": "node examples/scroll-drift/verify.mjs --record",
+  "scope": "JavaScript policy acceptance tests; not a Claude session or an automated browser test",
+  "policy_sha256": "0027cb325ef71efc2c92f31544717bcd9354e5325d53ddb494d323ac62334728",
+  "tests_sha256": "a933687e133fea64a563030226afb41ed9233ed76353ca2ff4ff1d173d90981a",
+  "results": [
+    {
+      "variant": "buggy",
+      "tests": 4,
+      "passed": 3,
+      "failed": 1,
+      "failures": [
+        "idle content keeps its position across ten timer ticks"
+      ]
+    },
+    {
+      "variant": "overfixed",
+      "tests": 4,
+      "passed": 1,
+      "failed": 3,
+      "failures": [
+        "manual wheel down still moves the content",
+        "manual wheel up still moves the content",
+        "manual scrolling cannot move above the beginning"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "failures": []
+    }
+  ]
+}
