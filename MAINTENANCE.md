@@ -40,7 +40,7 @@ python3 scripts/check_repo.py
 
 ## 權限與責任
 
-一般檢查只有 contents:read；每週觀察的 Issue 步驟另有 issues:write，不會推送 commit。不使用 pull_request_target 執行外部 PR 的程式。維護者 kevin801221 負責內容取捨與來源複查；外部貢獻方式見 [CONTRIBUTING.md](CONTRIBUTING.md)。
+觀察步驟使用 GitHub Actions 內建 token 查詢 GitHub API，避免共用 runner 的匿名限流；只有 HTTPS api.github.com 請求附帶授權，其他來源與跨站重新導向不會收到 token。一般檢查只有 contents:read；每週觀察的 Issue 步驟另有 issues:write，不會推送 commit。不使用 pull_request_target 執行外部 PR 的程式。維護者 kevin801221 負責內容取捨與來源複查；外部貢獻方式見 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 已知範圍
 

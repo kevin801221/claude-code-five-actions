@@ -7,3 +7,7 @@
 ## 上游回應中斷仍需留下複查訊號
 
 獨立審查以截斷的 HTTP chunked response 重現 IncompleteRead；先前例外會使監測中斷，來不及產生報告。現在此類 HTTPException 被記錄為 unreachable，舊基準保持不變。[回歸測試](../tests/test_sources.py)使用真正的本機 HTTP server 重現，避免只有正常抓取路徑被測到。
+
+## 公用 runner 的匿名 API 額度不等於本機額度
+
+第一次遠端維護成功建立待複查 Issue，也揭露三個 GitHub API 來源被匿名限流。本機抓取成功不能代替 runner 驗證。觀察步驟改用 Actions 的內建 token，並以 [主機與重新導向測試](../tests/test_source_headers.py)限制憑證的傳送範圍。
