@@ -1,0 +1,32 @@
+{
+  "claude-best-practices": {
+    "sha256": "ee235042febdd1f76cf07228240140239638a3c464b6bc39bd3014830d02a9bf",
+    "observed_at": "2026-11-17T10:17:49.122194+00:00",
+    "url": "https://code.claude.com/docs/en/best-practices"
+  },
+  "claude-hooks": {
+    "sha256": "a1cc3f82511cfbb06eb9b8641bfb63526d0f2086d87cc338e5d012d14b246abf",
+    "observed_at": "2026-11-17T10:17:49.122194+00:00",
+    "url": "https://code.claude.com/docs/en/hooks"
+  },
+  "claude-settings": {
+    "sha256": "bc72fdd5dc45fdf7ea3ce5d480628ce1fcb31aa09b6b796316f1db8ac02eb5e9",
+    "observed_at": "2026-11-17T10:17:49.122194+00:00",
+    "url": "https://code.claude.com/docs/en/settings"
+  },
+  "superpowers-readme": {
+    "sha256": "d87258eec0192a6484e3ad18e3e2b4a66c0d17583a91d2e9c1295c9865a5883b",
+    "observed_at": "2026-11-17T10:17:49.122194+00:00",
+    "url": "https://github.com/obra/superpowers"
+  },
+  "matt-skills-readme": {
+    "sha256": "919dd2a6fe20aef49edc2e59e817aedcff84c85fd58319684e084893f540b7b2",
+    "observed_at": "2026-11-17T10:17:49.122194+00:00",
+    "url": "https://github.com/mattpocock/skills"
+  },
+  "cursor-pstack": {
+    "sha256": "bfbea3a3ffb4c6b6dc5674b0359f568e85d520bfa049b26f33bc7672fcfc835a",
+    "observed_at": "2026-11-17T10:17:49.122194+00:00",
+    "url": "https://github.com/cursor/plugins/tree/main/pstack"
+  }
+}

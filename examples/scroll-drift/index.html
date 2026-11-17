@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scroll drift：同一份規格，三種結果</title>
+<style>
+:root{font:17px/1.7 system-ui,sans-serif;color:#183742;background:#f7f3e9}body{max-width:850px;margin:40px auto;padding:0 24px}h1{line-height:1.3}a{color:#086f72}label,button,select{font:inherit}button,select{padding:8px 14px;border:1px solid #41666b;border-radius:8px;background:white}#viewport{height:280px;overflow:auto;background:white;border:2px solid #467b7d;border-radius:12px;padding:0 20px;margin:20px 0;overscroll-behavior:contain}#viewport p{padding:14px 0;border-bottom:1px solid #ddd}output{font-variant-numeric:tabular-nums;font-weight:700}aside{background:#e4eeea;padding:16px;border-radius:10px}.muted{color:#52666b}
+</style>
+<h1>修好漂移，也要保留正常捲動。</h1>
+<p>同一份驗收單：閒置時不移動、手動滾輪仍能上下捲動。切換版本，觀察哪一項被破壞。</p>
+<label>版本 <select id="variant"><option value="buggy">buggy：每 750ms 漂移</option><option value="overfixed">overfixed：全部鎖住</option><option value="fixed" selected>fixed：只移除閒置漂移</option></select></label>
+<button id="reset">回到起始位置</button>
+<p>捲動位置：<output id="position" aria-live="off">120</output> px</p>
+<div id="viewport" tabindex="0" aria-label="捲動測試內容"></div>
+<aside id="explanation"></aside>
+<p class="muted">這是刻意建立的最小教學案例。自動化測試驗證共用的 JavaScript 捲動邏輯；此頁提供手動瀏覽器觀察。</p>
+<p><a href="README.md">讀案例與驗收條件</a> · <a href="../../README.md">回到五個動作</a></p>
+<script type="module">
+import { nextScrollTop } from './policy.mjs';
+const viewport = document.querySelector('#viewport');
+const variant = document.querySelector('#variant');
+const position = document.querySelector('#position');
+const explanation = document.querySelector('#explanation');
+for (let i = 1; i <= 30; i++) {
+  const p = document.createElement('p'); p.textContent = `第 ${i} 段：以驗收條件檢查結果，讓證據支持完成回報。`; viewport.append(p);
+}
+function update(event) { viewport.scrollTop = nextScrollTop(viewport.scrollTop, event, variant.value); position.value = Math.round(viewport.scrollTop); }
+function reset() { viewport.scrollTop = 120; position.value = 120; explanation.textContent = {
+  buggy: '先重現：手離開滑鼠，內容仍會每 750ms 向下漂移。',
+  overfixed: '看似修好：閒置不漂移，但在內容區使用滾輪也完全不動。',
+  fixed: '完整條件：閒置保持位置，內容區的滑鼠滾輪仍能正常移動。',
+}[variant.value]; }
+viewport.addEventListener('wheel', event => { event.preventDefault(); update({type:'wheel',delta:event.deltaY}); }, {passive:false});
+viewport.addEventListener('scroll', () => { position.value = Math.round(viewport.scrollTop); });
+variant.addEventListener('change', reset); document.querySelector('#reset').addEventListener('click', reset);
+setInterval(() => update({type:'tick'}), 750); reset();
+</script></html>

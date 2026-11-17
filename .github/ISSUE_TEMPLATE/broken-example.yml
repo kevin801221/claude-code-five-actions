@@ -1,0 +1,25 @@
+name: 失效範例
+description: 回報無法照步驟執行或結果不符的範例
+title: "[Example] "
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境與版本
+      placeholder: 作業系統、Node / Python / Claude Code 版本
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重現步驟與實際指令
+      placeholder: 從哪一個檔案與步驟開始？
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 預期與實際結果
+      placeholder: 附相關輸出，移除私人資訊
+    validations:
+      required: true

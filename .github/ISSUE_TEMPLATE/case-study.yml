@@ -1,0 +1,25 @@
+name: 實戰案例
+description: 分享五個動作如何改善一個真實任務
+title: "[Case] "
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: 任務與原本的失敗
+      placeholder: 描述可公開的背景
+    validations:
+      required: true
+  - type: textarea
+    id: move
+    attributes:
+      label: 採用的動作
+      placeholder: 完成定義、驗證、審查、邊界或教訓進結構
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 結果與證據
+      placeholder: 如何判斷有效？有哪些限制？
+    validations:
+      required: true
