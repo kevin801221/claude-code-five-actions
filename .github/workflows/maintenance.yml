@@ -28,6 +28,8 @@ jobs:
       - name: Verify the guide and examples
         run: python3 scripts/check_repo.py
       - name: Observe upstream fingerprints
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python3 scripts/watch_sources.py --report "$RUNNER_TEMP/upstream-report.json"
       - name: Report changes once
         env:

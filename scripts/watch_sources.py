@@ -5,15 +5,35 @@ from datetime import datetime, timezone
 import hashlib
 import http.client
 import json
+import os
 from pathlib import Path
 import urllib.request
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def request_headers(url, token=None):
+    headers = {'User-Agent': 'five-actions-source-watch'}
+    parsed = urlsplit(url)
+    if token and parsed.scheme == 'https' and parsed.netloc == 'api.github.com':
+        headers['Authorization'] = f'Bearer {token}'
+    return headers
+
+
+class SourceRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request, fp, code, msg, headers, newurl):
+        redirected = super().redirect_request(request, fp, code, msg, headers, newurl)
+        parsed = urlsplit(newurl)
+        if redirected is not None and (parsed.scheme != 'https' or parsed.netloc != 'api.github.com'):
+            redirected.remove_header('Authorization')
+        return redirected
+
+
 def fetch_source(source):
-    request = urllib.request.Request(source['watch_url'], headers={'User-Agent': 'five-actions-source-watch'})
-    with urllib.request.urlopen(request, timeout=20) as response:
+    request = urllib.request.Request(source['watch_url'], headers=request_headers(source['watch_url'], os.environ.get('GH_TOKEN')))
+    opener = urllib.request.build_opener(SourceRedirectHandler())
+    with opener.open(request, timeout=20) as response:
         body = response.read(2_000_001)
     if len(body) > 2_000_000:
         raise ValueError('Source exceeds observation size limit')
