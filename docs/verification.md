@@ -15,5 +15,7 @@
 | 原稿中的模型名稱、二手演講數字與所有 CLI 範例 | 待逐項複查 | 保留原始署名與內容，不能以本 repo 的 CI 徽章替它們背書 |
 | 瀏覽器 UI | 單次手動 smoke check | [觀察紀錄](../examples/scroll-drift/manual-browser-smoke.json)：fixed 能捲動、overfixed 滾輪不動、buggy 閒置會漂移；不是持續執行的瀏覽器整合 suite |
 | 真實 Claude session | 尚未整合驗證 | 未宣稱在每個 Claude Code 版本測過 hook；見[路線圖](../ROADMAP.md) |
+| 增補稿的技術限制 | 官方來源複查 | 2026-11-17 閱讀 Hooks、Permissions、Sandboxing、CLI reference、Mermaid config 與 W3C 幾何／字型規範；各主張與連結見[補充篇](field-notes.zh-TW.md)。未執行這些整合 |
+| 會議記錄與半導體情境 | 設計教材，尚未實作 | [會議記錄](cases/meeting-notes.md)與[四個半導體情境](cases/semiconductor.md)列出條件、失敗樣本與邊界；沒有 STT、Mermaid 量測、Mailpit、EDA 或檢索問答的執行證據 |
 
 新增「已驗證」項目時，需附環境、指令、輸出和來源；若只比對文件，使用「來源複查」狀態。

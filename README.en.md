@@ -16,6 +16,12 @@ An illustrated Claude Code field guide with reusable templates, a runnable failu
 4. **Enforce boundaries:** use appropriate environment controls. [Boundary examples](templates/boundaries/README.md)
 5. **Encode lessons:** turn a repeated mistake into a check that catches it. [Lessons](templates/LESSONS.md)
 
+## Verify the artifact and the check
+
+The new [field notes](docs/field-notes.zh-TW.md) (Traditional Chinese) connect measurements, screenshots, and user interactions to acceptance criteria. Each important check should reject a known bad sample, rather than merely confirm that a file exists.
+
+Use the [artifact acceptance matrix](templates/ARTIFACT-CHECKS.md) to connect each requirement to its output, negative control, and evidence. The [meeting-notes workflow](docs/cases/meeting-notes.md) and [four semiconductor scenarios](docs/cases/semiconductor.md) are **design walkthroughs, not implemented applications**. The executable fixture follows below.
+
 ## Run one case
 
 Requires Node.js 20+. No packages or model API keys needed.
