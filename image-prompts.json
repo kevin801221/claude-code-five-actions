@@ -1,0 +1,75 @@
+{
+  "generation_mode": "built-in image_gen",
+  "reference_sources": {
+    "Jesse_Vincent": "https://github.com/obra",
+    "Matt_Pocock": "https://github.com/mattpocock",
+    "poteto_representative_avatar": "https://github.com/poteto"
+  },
+  "images": [
+    {
+      "file": "01-cover.png",
+      "title": "封面：人負責兩端，agent 負責中間",
+      "prompt": "Use case: illustration-story. Create a polished wide landscape editorial illustration for a Traditional Chinese Markdown course document about agentic software engineering. This is cover art, NOT a slide or infographic. Warm ivory paper, dark navy ink, restrained teal and amber accents, sophisticated hand-drawn magazine illustration with light texture, generous breathing room. A continuous software workshop spans the image: a human client at the left hands a clear acceptance checklist to a friendly small teal engineering robot; at the center the robot actively builds, tests and repairs software at a workbench, with tangible test-result papers and a second inspecting robot; at the right a human examines the evidence and holds a final approval stamp. Make the evidence papers physically connect the stages. Across the foreground are five simple numbered tool cards, numbers 1 2 3 4 5 only, representing specification, test, independent review, guardrail, lessons turned into checks. Human control at both ends, robot execution in the middle, visible evidence connects them. Strong narrative composition, expressive body language, professional adult audience, no superhero costumes. No text anywhere other than the five numbers. No title, no watermark, no logos. Around 16:9.",
+      "references": []
+    },
+    {
+      "file": "02-schools.png",
+      "title": "三個流派的工程現場",
+      "prompt": "Use case: illustration-story. Create one wide three-panel editorial illustration comparing three agent engineering approaches in one coherent software workshop. Reference image 1 is Jesse Vincent's public GitHub portrait; reference image 2 is Matt Pocock's public GitHub portrait; reference image 3 is poteto/Lauren's public GitHub representative illustrated avatar; reference image 4 sets the warm ivory, navy, teal and amber editorial workshop style. These are appearance and style references, NOT images to edit. LEFT: Jesse with recognizable yellow thick-framed glasses and dark swept hair works with a friendly teal robot at a clear sequence of workflow checkpoints, holding a checklist. CENTER: Matt with recognizable bald head and round dark glasses asks a human questions at a whiteboard, points to acceptance checkboxes and module sketches, robot listens. RIGHT: use the poteto avatar as a recognizable illustrated representative: dark long hair, round gold glasses, black high collar; she reproduces a scrolling web app bug at a test bench with measurements and evidence, a small sweet potato on the desk echoes her avatar. Respectful professional editorial caricatures, no photorealism, no invented xAI logos. Three short headers verbatim: \"superpowers\", \"Matt Pocock\", \"pstack\". Smaller labels beneath, verbatim Traditional Chinese: \"流程\", \"對齊與設計\", \"證據\". No quotes or dialogue, no other text, no watermark. Characters must visibly DO different work, not just pose. Around 16:9.",
+      "references": [
+        "Jesse Vincent public GitHub avatar",
+        "Matt Pocock public GitHub avatar",
+        "poteto public GitHub representative avatar",
+        "images/01-cover.png"
+      ]
+    },
+    {
+      "file": "03-definition.png",
+      "title": "定義完成：把期待變成驗收條件",
+      "prompt": "Use case: illustration-story. Wide landscape three-panel educational editorial comic for a Traditional Chinese article. Consistent sophisticated magazine drawing: warm ivory paper, navy outlines, teal robot, amber highlights, light grain, adult software engineering setting. Same friendly small teal robot and human developer across panels. Panel 1: human describes a scrolling web app using an ambiguous cloud-shaped speech bubble with tangled lines; human and robot imagine different outcomes on small screens. Panel 2: both sit together and turn their ideas into one physical acceptance checklist with exactly three rows. A web app visual shows an idle mouse and steady content; another visual shows a hand scrolling and content moving normally. Panel 3: the agreed specification document is handed to a fresh robot at a clean desk, the old conversation bubbles left behind. Only render these short exact labels: \"需求\" on panel 1, \"SPEC.md\" on the central document, \"新 session\" on panel 3. Use checkboxes and tiny icons for checklist rows, no additional text. Emphasize shared observable acceptance criteria and clean handoff. No watermark, no title. Around 16:9.\nInput reference image: use only as the visual STYLE and recurring teal ROBOT appearance reference. Create a new scene, do not recreate the cover composition. Keep this individual illustration's specified subject and labels.",
+      "references": [
+        "images/01-cover.png"
+      ]
+    },
+    {
+      "file": "04-verification.png",
+      "title": "自我驗證：重現、修正、再驗證",
+      "prompt": "Use case: illustration-story. Wide landscape three-panel editorial comic, warm ivory paper, dark navy ink, teal and amber palette, red and green status accents, textured elegant magazine drawing, adult engineering workshop. Same friendly small teal engineering robot throughout. Tell one clear concrete bug-fixing story: left panel an untouched mouse sits beside a web app where content visibly drifts downward, robot points to a red failed-test terminal and an increasing scroll-position trace. Middle panel robot reads the failing output, works on the code with a wrench and keyboard; show careful diagnosis, not random magic. Right panel same unattended app now stays still; robot reruns the SAME test shown as green, presenting a physical evidence slip with command-shaped lines and output. Only three short panel labels, verbatim Traditional Chinese: \"先重現\", \"修正\", \"再驗證\". Small terminal labels \"FAIL\" and \"PASS\" allowed. Make test failure and success visible with shapes and symbols as well as color. No extra prose, no invented code, no watermark. Around 16:9.\nInput reference image: use only as the visual STYLE and recurring teal ROBOT appearance reference. Create a new scene, do not recreate the cover composition. Keep this individual illustration's specified subject and labels.",
+      "references": [
+        "images/01-cover.png"
+      ]
+    },
+    {
+      "file": "05-review.png",
+      "title": "獨立審查：驗收單找出漏掉的行為",
+      "prompt": "Use case: illustration-story. Wide landscape two-panel editorial comic for an adult software engineering lesson, warm ivory background, navy hand-drawn outlines, teal and amber, sophisticated light texture. Same web app and small teal engineering robot from a coherent course illustration series. Left panel: author robot proudly shows an idle web page with a green PASS terminal; app no longer drifts. Its simplistic fix has disabled all scrolling. Right panel: an independent amber-accent reviewer robot at a separate desk, physically separated from the author's conversation bubbles, holds the ORIGINAL \"SPEC.md\" checklist and tries the mouse wheel; a hand and a frozen scroll bar make clear normal user scrolling now fails. Reviewer points to the second checkbox, marked red X. Author looks thoughtfully surprised rather than stupid. Exact short labels only: \"作者\", \"獨立 reviewer\", \"SPEC.md\", \"PASS\", \"手動捲動？\". No long text, no watermark. Emphasize testing against requirements independently rather than two robots agreeing. Around 16:9.\nInput reference image: use only as the visual STYLE and recurring teal ROBOT appearance reference. Create a new scene, do not recreate the cover composition. Keep this individual illustration's specified subject and labels.",
+      "references": [
+        "images/01-cover.png"
+      ]
+    },
+    {
+      "file": "06-boundaries.png",
+      "title": "確定性邊界：提醒與環境攔截",
+      "prompt": "Use case: illustration-story. Wide landscape two-panel educational editorial illustration, sophisticated hand-drawn magazine style, warm ivory paper, dark navy lines, teal robots, restrained amber and coral accents. Both panels show the same software workshop and a cabinet containing symbolic key shapes, no actual credentials. Left: robot is surrounded by a forest of paper reminders stuck to walls; papers say only \"IMPORTANT\" or show exclamation marks. The cabinet is openable despite reminders, robot is about to cross a dotted caution line. Right: robot works freely at a spacious workbench inside a clear physical safety boundary; the key cabinet is outside the permitted workspace behind a locked gate; a separate automatic stop device intercepts a disallowed operation. Show several complementary controls with distinct functions, not one magical shield. Only labels on right controls: \"deny\", \"sandbox\", \"hook\". Short Traditional Chinese panel labels: \"提醒\" and \"環境攔截\". No claims of total security, no prose, no scary hacker imagery, no watermark. Around 16:9.\nInput reference image: use only as the visual STYLE and recurring teal ROBOT appearance reference. Create a new scene, do not recreate the cover composition. Keep this individual illustration's specified subject and labels.",
+      "references": [
+        "images/01-cover.png"
+      ]
+    },
+    {
+      "file": "07-lessons.png",
+      "title": "教訓進結構：讓下一次自動攔下",
+      "prompt": "Use case: illustration-story. Wide landscape three-panel editorial comic in warm ivory paper, navy ink, teal engineering robots and amber accents, polished textured magazine illustration for adults. A recurring programming mistake is represented by a square red faulty component. Panel 1: human reviewer notices the faulty component and attaches one reminder sticky note to a robot's workbench. Panel 2: fresh session, same component error returns, multiple sticky notes pile up; human recognizes this is recurring. Panel 3: the team improves the workbench with a keyed socket that cannot accept the wrong component shape, PLUS an automatic test fixture that turns red when the known faulty old component is tried. Correct shaped component passes beside it. Show that the lesson lives in the structure and the new check actually catches the OLD mistake. Only short labels, verbatim: \"第一次\", \"第二次\", \"改成結構\". Small labels \"types\", \"lint\", \"test\" on tools allowed. No long text, no watermark. Around 16:9.\nInput reference image: use only as the visual STYLE and recurring teal ROBOT appearance reference. Create a new scene, do not recreate the cover composition. Keep this individual illustration's specified subject and labels.",
+      "references": [
+        "images/01-cover.png"
+      ]
+    },
+    {
+      "file": "08-placement.png",
+      "title": "三層放置：原則、流程與強制機制",
+      "prompt": "Use case: illustration-story. Wide landscape editorial cutaway illustration of one software engineering workshop, designed to teach three different places for agent instructions. Same warm ivory paper, navy ink, teal robot, amber accents, polished hand-drawn magazine style, tasteful texture, adult professional audience. Three visually distinct zones left to right but one coherent room: LEFT entrance wall has ONE very short principles placard that a robot reads on entry, labeled exactly \"CLAUDE.md\"; CENTER workbench has a bookshelf with task-specific instruction manuals, a robot chooses one only when needed, visible manual labeled exactly \"SKILL.md\"; RIGHT machinery has a physical interlock, access gate, and automatic stop control built into the equipment, not just paperwork, with small labels \"hooks\" and \"deny\". One exact short Chinese label under each zone: \"工作原則\", \"任務流程\", \"強制機制\". Clear contrast in physical function: always-visible concise guide, on-demand manual, environment-enforced control. No extra text, no watermark. Around 16:9.\nInput reference image: use only as the visual STYLE and recurring teal ROBOT appearance reference. Create a new scene, do not recreate the cover composition. Keep this individual illustration's specified subject and labels.",
+      "references": [
+        "images/01-cover.png"
+      ]
+    }
+  ]
+}
